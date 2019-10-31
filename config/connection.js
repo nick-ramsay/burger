@@ -4,11 +4,15 @@ require("dotenv").config();
 const keys = require("./keys.js");
 const mysql = require("mysql");
 
+console.log("Port: " + keys);
+console.log("PW: " + keys.mysql.pw);
 var connection = mysql.createConnection({
     host: "localhost",
-    port: keys.mysql.port,
+    port: 3306,
+    //port: keys.mysql.port,
     user: "root",
-    password: keys.mysql.pw,
+    password: "data.Dump89",
+    //password: keys.mysql.pw,
     database: "burgers_db"
 });
 
