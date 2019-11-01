@@ -11,12 +11,15 @@
 
 <h2>Burgers to be devoured...</h2>
 
-<ul>
+<div class="currentBurgers" position="absolute">
     {{#each burgers}}
-    <img src="../public/assets/images/burger.png" height="50px" width="50px">
-   <p>{{burger_name}}</p>
-    <!--<button class="devour-burger" data-id="{{id}}" data-devoured="{{devoured}}">
-        Devoured!
-    </button>-->
+    <div class="burger" position="relative">
+        <img src="https://img.icons8.com/officel/80/000000/hamburger.png" height="50px" width="50px"
+            id="burgerimg{{this.id}}">
+        <p>{{this.burger_name}}</p>
+        <button class="devour-burger" data-id="{{id}}" data-devoured="{{devoured}}">
+            Devoured!
+        </button>
+    </div>
     {{/each}}
-</ul>
+</div>
