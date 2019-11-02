@@ -7,26 +7,23 @@ const orm = {
             if (err) {
                 throw err;
             };
-            console.log(result);
             cb(result);
         });
     },
-    insertOne: function(table, column, newValue) {
+    insertOne: function(table, column, newValue, cb) {
         const queryString = "INSERT INTO ??(??) VALUES (?)";
         connection.query(queryString, [table,column,newValue], function (err,result) {
             if (err) {
                 throw err;
             }
-            console.log(result);
         });
     },
-    updateOne: function(table, updateColumn, newValue, targetColumn, targetValue) {
+    updateOne: function(table, updateColumn, newValue, targetColumn, targetValue, cb) {
         const queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?;"
         connection.query(queryString, [table, updateColumn, newValue, targetColumn, targetValue], function (err,result){
             if (err) {
                 throw err;
             }
-            console.log(result);
         });
     }
 };
