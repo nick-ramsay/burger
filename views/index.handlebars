@@ -4,15 +4,17 @@
 <form class="create-form">
     <div class="form-group">
         <label for="burg">Burger Name:</label>
-        <input type="text" id="burg" name="name" placeholder="Enter your burger's name">
+        <input type="text" id="newBurger" name="name" placeholder="Enter your burger's name">
     </div>
-    <button type="submit">Add Burger</button>
+    <button id="submit" type="submit">Add Burger</button>
 </form>
 
 <h2>Burgers to be devoured...</h2>
 
-<div class="currentBurgers" position="absolute">
+<div class="undevouredBurgers" position="absolute">
+    <h3>Undevoured Burgers</h3>
     {{#each burgers}}
+    {{#unless devoured}}
     <div class="burger" position="relative">
         <img src="https://img.icons8.com/officel/80/000000/hamburger.png" height="50px" width="50px"
             id="burgerimg{{this.id}}">
@@ -21,5 +23,21 @@
             Devoured!
         </button>
     </div>
+    {{/unless}}
+    {{/each}}
+</div>
+<div class="devouredBurgers" position="absolute">
+    <h3>Devoured Burgers</h3>
+    {{#each burgers}}
+    {{#if devoured}}
+    <div class="burger" position="relative">
+        <img src="https://img.icons8.com/officel/80/000000/hamburger.png" height="50px" width="50px"
+            id="burgerimg{{this.id}}">
+        <p>{{this.burger_name}}</p>
+        <button class="devour-burger" data-id="{{id}}" data-devoured="{{devoured}}">
+            Devoured!
+        </button>
+    </div>
+    {{/if}}
     {{/each}}
 </div>
