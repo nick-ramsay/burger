@@ -7,8 +7,17 @@ const burger = require("../models/burger.js");
 router.get("/", function (req, res) {
   burger.selectAll(function (data) {
     var hbsObject = {
-      burgers: data
-    };
+      devouredBurgers: [],
+      freshBurgers: []
+    }
+
+    data.forEach(function (burger) {
+      if (burger.devoured)
+        hbsObject.devouredBurgers.push(burger);
+      else
+        hbsObject.freshBurgers.push(burger)
+    });
+
     res.render("index", hbsObject);
   });
 });
