@@ -1,7 +1,84 @@
-.undeavouredBurgers, .devouredBurgers {
-    width: 50%;
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #F5F5F5;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
 }
 
+h1 {
+    background-color: indigo;
+    color: whitesmoke;
+    margin: 0;
+    padding: 5px 0 5px 0;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.burger {
+    text-align: center;
+    width: 90%;
+    padding: 10px 0 0 0;
+    margin: 3px 5% 3px 5%;
+    min-height: 140px;
+    background-color: green;
+    color: whitesmoke;
+    border-radius: 5px;
+    font-weight: bold;
+}
 .newBurgerForm {
     text-align: center;
+    padding: 0;
+    height: 70px;
+}
+
+.undevouredBurgers, .devouredBurgers {
+    background-color: white;
+    border-radius: 5px;
+    padding: 0 0 10px 0;
+}
+
+.undevouredBurgers {
+    width: 45%;
+    float:left;
+    margin: 10px 4% 0 1%;
+}
+
+.devouredBurgers {
+    width: 45%;
+    margin: 10px 1% 0 4%;
+    float:left;
+}
+
+.addBurgerButton {
+    color:whitesmoke;
+    background-color: green;
+    border: none;
+    margin: 10px 0 0 0;
+    padding:5px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.addBurgerButton:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+}
+
+.devourButton {
+    color:whitesmoke;
+    background-color: indigo;
+    border: none;
+    padding:5px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.devourButton:hover {
+    padding: 7px;
+    cursor: pointer;
+    background-color: indigo;
 }

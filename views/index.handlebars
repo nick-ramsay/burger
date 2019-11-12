@@ -13,28 +13,24 @@
 
 <div class="undevouredBurgers" position="absolute">
     <h3>Undevoured Burgers</h3>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <div class="burger" position="relative">
-        <img src="https://img.icons8.com/officel/80/000000/hamburger.png" height="50px" width="50px"
-            id="burgerimg{{this.id}}">
-        <p>{{this.burger_name}}</p>
-        <button class="devourButton" data-id="{{id}}" data-devoured="{{devoured}}">
-            Devour!
-        </button>
-    </div>
-    {{/unless}}
+    {{#each freshBurgers}}
+        <div class="burger" position="relative">
+            <img src="https://img.icons8.com/officel/80/000000/hamburger.png" height="50px" width="50px"
+                id="burgerimg{{this.id}}">
+            <p>{{this.burger_name}}</p>
+            <button class="devourButton" data-id="{{id}}" data-devoured="{{devoured}}">
+                Devour!
+            </button>
+        </div>
     {{/each}}
 </div>
 <div class="devouredBurgers" position="absolute">
     <h3>Devoured Burgers</h3>
-    {{#each burgers}}
-    {{#if devoured}}
-    <div class="burger" position="relative">
-        <img src="https://img.icons8.com/officel/80/000000/hamburger.png" height="50px" width="50px"
-            id="burgerimg{{this.id}}">
-        <p>{{this.burger_name}} has been devoured</p>
-    </div>
-    {{/if}}
+    {{#each devouredBurgers}}
+        <div class="burger" position="relative">
+            <img src="https://img.icons8.com/officel/80/000000/hamburger.png" height="50px" width="50px"
+                id="burgerimg{{this.id}}">
+            <p>{{this.burger_name}} has been devoured</p>
+        </div>
     {{/each}}
 </div>
